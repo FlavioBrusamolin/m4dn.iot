@@ -1,0 +1,40 @@
+<div class="container-fluid" id="interface">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-2 col-md-offset-2 col-lg-offset-2"
+            id="borda_cadastro">
+            <div class="row">
+                <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 col-lg-offset-4"
+                    id="tela_cadastro">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="logo_cadastro">
+                        <img src="images/iot_research_group_menor.png" class="img-responsive" alt="Responsive image" id="logo_iot" />
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="cadastro">
+                        <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate autocomplete="off">
+                            <h2 id="sign_cadastro"><strong>Sign up to the system</strong></h2>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="nome" ng-model="usuario.nome" placeholder="Full name">
+                            </div>
+                            <div class="form-group" ng-class="{'has-error' : userForm.email.$invalid && !userForm.email.$pristine}">
+                                <input type="email" class="form-control" name="email" ng-model="usuario.email"
+                                    placeholder="Email adress">
+                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Report
+                                    a valid email.</p>
+                            </div>
+                            <div class="form-group" ng-class="{'has-error' : userForm.senha.$invalid && !userForm.senha.$pristine}">
+                                <input type="password" class="form-control" name="senha" ng-model="usuario.senha"
+                                    placeholder="Password" ng-minlength="8">
+                                <p ng-show="userForm.senha.$error.minlength" class="help-block">Password must contain
+                                    at least 8 digits.</p>
+                            </div>
+                            <button type="submit" class="btn btn-block" id="signup_cadastro" ng-disabled="userForm.$invalid"
+                                ng-click="cadastrar(usuario)">SIGN UP</button>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="voltar_cadastro">
+                        <a href="#!/login"><span id="seta_voltar" class="glyphicon glyphicon-arrow-left"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

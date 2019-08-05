@@ -1,0 +1,106 @@
+<div class="container-fluid background">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-2"
+        id="interface_topologia">
+        <div id="fixed">
+            <nav class="navbar navbar-default" id="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://inatel.br/iotgroup/">
+                            <img src="images/iot_research_group_menor.png" id="logo_iot_topology">
+                        </a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="headerCtrl">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a ng-class="{active:isActive('/topology')}" href="#!/topology">NETWORK</a></li>
+                            <li><a href="#!/login">LOGOUT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="texts">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="title">
+                        <h2 id="titulo">Network Topology</h2>
+                        <h3 id="subtitulo">Manage all your devices connected to the network</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="grafo">
+            <div id="graph-container"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" id="modalDevice" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-device modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-xs-8 col-sm-10 col-md-10 col-lg-10">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><strong>{{label}}: {{ip}}</strong></h5>
+                    </div>
+                    <div class="col-xs-4 col-sm-2 col-md-2 col-lg-2" id="power_button">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="power_button_label">
+                            <h6 class="modal-title" id="label_power"><strong>ON/OFF</strong></h6>
+                        </div>
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" id="power_button_botao">
+                            <input id="switch-shadow" class="switch switch--shadow" type="checkbox" ng-model="power">
+                            <label for="switch-shadow"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-lg-offset-0"
+                        id="ficha_status">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="ficha_imagem_status">
+                            <img src="images/status.png" class="img-responsive imagem_ficha_device">
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ficha_texto">
+                            <h6 class="texto_ficha">Status</h6>
+                            <div class="informacao_centro">
+                                <h4 class="informacao_ficha">{{status}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 col-xs-offset-2 col-sm-offset-1 col-md-offset-1 col-lg-offset-1"
+                        id="ficha_corrente">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="ficha_imagem_corrente">
+                            <img src="images/corrente.png" class="img-responsive imagem_ficha_device">
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ficha_texto">
+                            <h6 class="texto_ficha">Current</h6>
+                            <div class="informacao_centro">
+                                <h4 class="informacao_ficha">{{corrente}} A</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-sm-3 col-md-3 col-lg-3 col-xs-offset-2 col-sm-offset-1 col-md-offset-1 col-lg-offset-1"
+                        id="ficha_tensao">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="ficha_imagem_tensao">
+                            <img src="images/tensao.png" class="img-responsive imagem_ficha_device">
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ficha_texto">
+                            <h6 class="texto_ficha">Voltage</h6>
+                            <div class="informacao_centro">
+                                <h4 class="informacao_ficha">{{tensao}} V</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click=close()>Close</button>
+            </div>
+        </div>
+    </div>
+</div>

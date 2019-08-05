@@ -1,0 +1,50 @@
+<div class="container-fluid" id="interface">
+	<div class="row">
+		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-2"
+		 id="borda">
+			<div class="row">
+				<div class="col-xs-12 col-sm-5 col-md-4 col-lg-4" id="tela_login">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="logo">
+						<img src="images/iot_research_group_menor.png" class="img-responsive" alt="Responsive image" id="logo_iot" />
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="login">
+						<form novalidate autocomplete="off">
+							<h2 id="sign"><strong>Sign in to the system</strong></h2>
+							<div class="form-group">
+								<input type="email" class="form-control" name="email" ng-model="usuario.email" placeholder="Email adress">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" name="senha" ng-model="usuario.senha" placeholder="Password">
+							</div>
+							<!-- <div class = "checkbox col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "checkbox"> 
+								<label class = "control-label">
+									<input type = "checkbox" class = "regular-checkbox"/>
+									Remember me
+								</label>
+							</div>
+							<div class = "checkbox col-xs-6 col-sm-6 col-md-6 col-lg-6" id = "forgot">
+								<label class = "control-label">
+									Forgot password?
+								</label>
+							</div> -->
+							<button type="button" class="btn btn-block" id="signin" ng-click="entrar(usuario)">SIGN IN</button>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="separacao">
+								<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="linha">
+									<hr />
+								</div>
+								<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="corte">
+									<h4 id="or">or</h4>
+								</div>
+								<hr />
+							</div>
+							<button type="button" class="btn btn-block" id="signup" ng-click="cadastro()">SIGN UP</button>
+						</form>
+					</div>
+				</div>
+				<div class="col-xs-0 col-sm-7 col-md-8 col-lg-8" id="tela_abstrata">
+					<h1 id="mensagem">Welcome to M4DN.IoT</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
