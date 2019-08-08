@@ -3,8 +3,9 @@ var cors = require('cors');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+require("dotenv-safe").load();
 
-mongoose.connect('BD_URL', { useNewUrlParser: true });
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
 
 app.use(bodyParser.json());
 app.use(cors());
